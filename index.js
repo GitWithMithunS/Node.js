@@ -1,18 +1,18 @@
 const fs = require('fs')
 
-fs.readFile('./files/starter.txt',(err,data) => {
-    if(err) throw err;
+fs.readFile('./files/starter.txt', (err, data) => {
+    if (err) throw err;
     console.log(data)     //the data is given out as a buffer data(u cant read and understand it as it is not encoded)
     console.log(data.toString())
 })
 //another way to read the file is 
-fs.readFile('./files/starter.txt','utf8',(err,data) => {     //an extra parameter UTF-8 is used  -->'utf8' is an encoding option. 
-    if(err) throw err;          //When reading or writing files, it's essential to specify the character encoding to interpret the binary data correctly.
+fs.readFile('./files/starter.txt', 'utf8', (err, data) => {     //an extra parameter UTF-8 is used  -->'utf8' is an encoding option. 
+    if (err) throw err;          //When reading or writing files, it's essential to specify the character encoding to interpret the binary data correctly.
     console.log(data)           //'utf8' is one of the most common character encodings, representing Unicode Transformation Format 8-bit.
 })
 //best way to read the files is :-
 const path = require('path')
-fs.readFile(path.join(__dirname,'files','starter.txt'),"utf8",(err,data) => {
+fs.readFile(path.join(__dirname, 'files', 'starter.txt'), "utf8", (err, data) => {
     if (err) throw err;
     console.log(data)
 })
