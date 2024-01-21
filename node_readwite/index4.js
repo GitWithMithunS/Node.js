@@ -8,8 +8,8 @@ const wr = fs.createWriteStream('./files/new-lorem.txt',{encoding:'utf8'}) //Aga
 //The createReadStream method is used to create a readable stream (here:rs) from the file ./files/lorem.txt
 //The createWriteStream method is used to create a writable stream (wr) for the file ./files/new-lorem.txt
 
-rs.on('data',(dataChunk) => {
-    wr.write(dataChunk)
+rs.on('data',(dataChunk) => { //The data event is emitted by the readable stream (rs) whenever it has data available to be read.
+    wr.write(dataChunk)      //The provided callback function is executed each time a chunk of data is received.
 })
 // //this is more effective way
 // rs.pipe(wr)    //The pipe method is a built-in method provided by Node.js readable streams. It establishes a unidirectional flow of data from a readable stream to a writable stream. The syntax is readableStream.pipe(writableStream)

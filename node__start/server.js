@@ -27,10 +27,10 @@ console.log(path.join(__dirname, 'files', 'examples.txt'), '=> using join ')
 
 //their are some more modules in node like=> "path","http","events","fs","crypto","os","url"
 
-const math = require('math.js') //require('./math') even this is correct
+const math = require('./math.js') //require('./math') even this is correct
 console.log(math.add(2, 4))
 console.log(math.mul(2, 4))
-const { add, sub, mul, div } = require('math.js')  //another way of doing it is by destructuring
+const { add, sub, mul, div } = require('./math.js')  //another way of doing it is by destructuring
 console.log(add(2, 4))
 console.log(div(2, 4))
 

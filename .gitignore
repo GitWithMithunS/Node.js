@@ -1,0 +1,4 @@
+# The .gitignore file is used in Git repositories to specify intentionally untracked files and directories that Git should ignore.
+# When you commit changes in a Git repository, Git looks at the contents of your working directory.
+# The .gitignore file allows you to specify patterns that define which files or directories should be excluded from version control and not tracked by Git.
+node_modules  
