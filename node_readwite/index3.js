@@ -1,4 +1,4 @@
-//we can get rid off the callback hell by using async/await function o nodejs
+//we can get rid off the callback hell by using async/await function of nodejs
 const fsPromises = require('fs').promises;   //we are importing a filesystem promises(romise-based API of the Node.js fs module)
 const path = require('path')   //The fs.promises object contains methods that return promises instead of using traditional callbacks
 
