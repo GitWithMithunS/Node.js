@@ -11,6 +11,9 @@ const logevents = async (message) => {
     const logitem = `${datetime} \t ${uuid()} \t ${message}`
     console.log(logitem)
     try {
+        if(!fs.existsSync(__dirname,'logs')){
+            await fs.promises.mkdir(path.join(__dirname,'logs'))
+        }
         await fs.promises.appendFile(path.join(__dirname,'logs','eventlog.txt'),logitem);
     } catch (error) {
         console.log(error)
