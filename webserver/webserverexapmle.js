@@ -16,12 +16,14 @@ const PORT = process.env.port || 3500       //process.env.port this if the port 
 
 //creating a web server
 const server = http.createServer((req, res) => {
-    console.log(req.url, req.method)
+    console.log(req.url, req.method)    //req.url: This property represents the URL (Uniform Resource Locator) of the incoming HTTP request. It contains the path and query parameters of the request.
+    //req.method: This property represents the HTTP method (or verb) used in the request, such as "GET," "POST," "PUT," "DELETE," etc.
+
     let paths;
 
     if (req.url == '/' || req.url == 'index.html') {
-        res.statusCode = 200; //means successful
-        res.setHeader('Content-Type', 'text/html');   //content type is set to html/text
+        res.statusCode = 200; //statuscode=200 means successfull indicates that the server has successfully processed the request and is returning the requested resource.
+        res.setHeader('Content-Type', 'text/html');   //content type is set to html/text -->  This header informs the client (e.g., a web browser) how to interpret the content.
         paths = path.join(__dirname, 'views', 'index.html')
         fs.readFile(paths, 'utf8', (err, data) => {
             res.end(data)            //send the data

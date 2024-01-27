@@ -5,7 +5,7 @@ const fspromises = require('fs').promises;
 const path= require('path')
 
 console.log('hi event emitter')      
-const logevents = async (message) => {       
+const logevents = async (message ,logname) => {       
     const datetime  = `${format(new Date() , 'yyyyMMdd /t HH:mm:ss')}` 
     const logitem = `${datetime} \t ${uuid()} \t ${message} \n`         
     console.log(logitem)
@@ -13,7 +13,7 @@ const logevents = async (message) => {
         if(!fs.existsSync(__dirname,'logs')){       
             await fspromises.mkdir(path.join(__dirname,'logs'))
         }
-        await fspromises.appendFile(path.join(__dirname,'logs','log'),logitem); 
+        await fspromises.appendFile(path.join(__dirname,'logs',logname),logitem); 
     } catch (error) {
         console.log(error)
     }
